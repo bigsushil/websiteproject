@@ -57,7 +57,11 @@ def productfirewall():
 
 @app.route('/endpoint-security/')
 def endpointsecurity():    
-    return render_template('endpoint-security.html')    
+    return render_template('endpoint-security.html')
+
+@app.route('/tally-services/')
+def tallyservices():
+    return render_template('tally-accounting-software.html')
 
 if __name__ == '__main__':
     app.run(debug=True , port=8000 , host='0.0.0.0')
