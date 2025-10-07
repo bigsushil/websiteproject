@@ -1,17 +1,227 @@
 {% extends "layout.html" %}
 {% block content %}
-<body>
-    <h1>Product List</h1>
-    <ul>
-        {% for product in products %}
-            <li>
-                <h2>{{ product.name }}</h2>
-                <p>Price: ${{ product.price }}</p>
-                <p>{{ product.description }}</p>
-            </li>
-        {% else %}
-            <li>No products available.</li>
-        {% endfor %}
-    </ul>
+ <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container">
+        <h1>Products Portfolio </h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Product Portfolio </li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+             <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+     <!-- <div class="container section-title">
+        <h2>Portfolio</h2>
+        <p>featuring successful projects, smart solutions, and impactful results across IT, automation, and customer engagement</p>
+      </div> --><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="fitRows" data-sort="original-order">
+
+          <div class="portfolio-filters-wrapper">
+            <ul class="portfolio-filters isotope-filters">
+              <li data-filter="*" class="filter-active">Products/Services</li>
+              <li data-filter=".filter-branding">Products</li>
+              <li data-filter=".filter-web">Cyber Security</li>
+              <li data-filter=".filter-print">WhatsApp Integration</li>
+              <li data-filter=".filter-motion">Tally Customization</li>
+            </ul>
+          </div>
+
+          <div class="row gy-4 portfolio-grid isotope-container">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-card">
+                <div class="image-container">
+                  <img src="{{url_for('static',filename='assets/img/portfolio/portfolio-3.jpg')}}" class="img-fluid" alt="Brand Identity" loading="lazy">
+                  <div class="overlay">
+                    <div class="overlay-content">
+                      <a href="{{url_for('static',filename='assets/img/portfolio/portfolio-3.jpg')}}" class="glightbox zoom-link" title="Brand Identity Project">
+                        <i class="bi bi-zoom-in"></i>
+                      </a>
+                      <a href="/fliparrow-products/" class="details-link" title="View Project Details">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="content">
+                  <h3>Firewall Products</h3>
+                  <p>Fortinet Firewall /Endpoint Security system</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+              <div class="portfolio-card">
+                <div class="image-container">
+                  <img src="{{url_for('static',filename='assets/img/portfolio/portfolio-7.jpg')}}" class="img-fluid" alt="E-commerce Platform" loading="lazy">
+                  <div class="overlay">
+                    <div class="overlay-content">
+                      <a href="{{url_for('static',filename='assets/img/portfolio/portfolio-7.jpg')}}" class="glightbox zoom-link" title="E-commerce Platform">
+                        <i class="bi bi-zoom-in"></i>
+                      </a>
+                      <a href="/fliparrow-products/" class="details-link" title="View Project Details">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="content">
+                  <h3>Unique UPI Products</h3>
+                  <p>Modern online shopping experience</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-print">
+              <div class="portfolio-card">
+                <div class="image-container">
+                  <img src="{{url_for('static',filename='assets/img/portfolio/portfolio-portrait-5.jpg')}}" class="img-fluid" alt="Magazine Design" loading="lazy">
+                  <div class="overlay">
+                    <div class="overlay-content">
+                      <a href="{{url_for('static',filename='assets/img/portfolio/portfolio-portrait-5.jpg')}}" class="glightbox zoom-link" title="Magazine Design">
+                        <i class="bi bi-zoom-in"></i>
+                      </a>
+                      <a href="/fliparrow-products/" class="details-link" title="View Project Details">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="content">
+                  <h3>Integration</h3>
+                  <p>Editorial layout and typography</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-motion">
+              <div class="portfolio-card">
+                <div class="image-container">
+                  <img src="{{url_for('static',filename='assets/img/portfolio/portfolio-8.jpg')}}" class="img-fluid" alt="Motion Graphics" loading="lazy">
+                  <div class="overlay">
+                    <div class="overlay-content">
+                      <a href="{{url_for('static',filename='assets/img/portfolio/portfolio-8.jpg')}}" class="glightbox zoom-link" title="Motion Graphics">
+                        <i class="bi bi-zoom-in"></i>
+                      </a>
+                      <a href="/fliparrow-products/" class="details-link" title="View Project Details">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="content">
+                  <h3>Motion Graphics</h3>
+                  <p>Animated visual storytelling</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-card">
+                <div class="image-container">
+                   <img src="{{url_for('static',filename='assets/img/portfolio/portfolio-9.jpg')}}" class="img-fluid" alt="Motion Graphics" loading="lazy">
+                  <div class="overlay">
+                    <div class="overlay-content">
+                      <a href="{{url_for('static',filename='assets/img/portfolio/portfolio-9.jpg')}}" class="glightbox zoom-link" title="Logo Collection">
+                        <i class="bi bi-zoom-in"></i>
+                      </a>
+                      <a href="/fliparrow-products/" class="details-link" title="View Project Details">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="content">
+                  <h3>Logo Collection</h3>
+                  <p>Diverse brand mark explorations</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+              <div class="portfolio-card">
+                <div class="image-container">
+                  <img src="{{url_for('static',filename='assets/img/portfolio/portfolio-portrait-8.jpg')}}" class="img-fluid" alt="Mobile App Design" loading="lazy">
+                  <div class="overlay">
+                    <div class="overlay-content">
+                      <a href="{{url_for('static',filename='assets/img/portfolio/portfolio-portrait-8.jpg')}}" class="glightbox zoom-link" title="Mobile App Design">
+                        <i class="bi bi-zoom-in"></i>
+                      </a>
+                      <a href="/fliparrow-products/" class="details-link" title="View Project Details">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="content">
+                  <h3>Mobile App Design</h3>
+                  <p>User-centered interface design</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-print">
+              <div class="portfolio-card">
+                <div class="image-container">
+                  <img src="{{url_for('static',filename='assets/img/portfolio/portfolio-10.jpg')}}" class="img-fluid" alt="Packaging Design" loading="lazy">
+                  <div class="overlay">
+                    <div class="overlay-content">
+                      <a href="{{url_for('static',filename='assets/img/portfolio/portfolio-10.jpg')}}" class="glightbox zoom-link" title="Packaging Design">
+                        <i class="bi bi-zoom-in"></i>
+                      </a>
+                      <a href="/fliparrow-products/" class="details-link" title="View Project Details">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="content">
+                  <h3>Packaging Design</h3>
+                  <p>Sustainable product packaging solutions</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-motion">
+              <div class="portfolio-card">
+                <div class="image-container">
+                  <img src="{{url_for('static',filename='assets/img/portfolio/portfolio-11.jpg')}}" class="img-fluid" alt="Brand Animation" loading="lazy">
+                  <div class="overlay">
+                    <div class="overlay-content">
+                      <a href="{{url_for('static',filename='assets/img/portfolio/portfolio-11.jpg')}}" class="glightbox zoom-link" title="Brand Animation">
+                        <i class="bi bi-zoom-in"></i>
+                      </a>
+                      <a href="/fliparrow-products/" class="details-link" title="View Project Details">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="content">
+                  <h3>Brand Animation</h3>
+                  <p>Dynamic brand identity systems</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Grid -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
 </body>
 {% endblock %}
