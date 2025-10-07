@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<body>
+    <h1>Product List</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                <h2>{{ product.name }}</h2>
+                <p>Price: ${{ product.price }}</p>
+                <p>{{ product.description }}</p>
+            </li>
+        {% else %}
+            <li>No products available.</li>
+        {% endfor %}
+    </ul>
+</body>
+{% endblock %}

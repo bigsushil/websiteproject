@@ -1,0 +1,33 @@
+<span id="dynamicText"></span>
+<style>
+  #dynamicText {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+  }
+</style>
+
+<script>
+  const textOptions = ["Network Security", "Backup Solutions", "Tally Accounting", "Cloud Computing"];
+  let currentIndex = 0;
+  const dynamicTextElement = document.getElementById("dynamicText");
+
+  function changeText() {
+    // Fade out
+    dynamicTextElement.style.opacity = 0;
+
+    // Wait for fade-out to complete before changing text
+    setTimeout(() => {
+      dynamicTextElement.textContent = textOptions[currentIndex];
+      currentIndex = (currentIndex + 1) % textOptions.length;
+
+      // Fade in
+      dynamicTextElement.style.opacity = 1;
+    }, 500); // Match this to the CSS transition duration
+  }
+
+  // Initial display
+  changeText();
+
+  // Repeat every 2 seconds
+  setInterval(changeText, 2000);
+</script>
