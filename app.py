@@ -55,5 +55,9 @@ def products():
 def productfirewall():    
     return render_template('fortinet-harware-firewall.html')
 
+@app.route('/endpoint-security/')
+def endpointsecurity():    
+    return render_template('endpoint-security.html')    
+
 if __name__ == '__main__':
     app.run(debug=True , port=8000 , host='0.0.0.0')
