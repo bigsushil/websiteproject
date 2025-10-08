@@ -62,6 +62,18 @@ def endpointsecurity():
 @app.route('/tally-services/')
 def tallyservices():
     return render_template('tally-accounting-software.html')
+@app.route('/tally-whatsapp-integration/')
+def tallywhatsappintegration():
+    return render_template('tally-whatsapp-integration.html')
 
+
+@app.route('/add-customer', methods=['POST'])
+def add_customer():
+    from flask import request, redirect, url_for, flash
+    name = request.form.get('name')
+    city = request.form.get('city')
+    phone = request.form.get('phone')
+    # For now, just return a simple confirmation. In a real app you'd save to a database.
+    return render_template('customer-added.html', name=name, city=city, phone=phone)
 if __name__ == '__main__':
     app.run(debug=True , port=8000 , host='0.0.0.0')
