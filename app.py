@@ -38,3 +38,4 @@ if __name__ == '__main__':
 # import controller.product_controller as product_controller
 # import controller.social_media as social_media
 #from controller import product_controller,social_media
+from controller import *
