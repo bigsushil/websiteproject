@@ -21,23 +21,7 @@ def services():
     return render_template('service-details.html') 
 
 # Social Media and Other Routes
-@app.route('/youtube')
-def youtube():
-    return render_template('https://www.youtube.com/@FliparrowTechnologies')
 
-@app.route('/linkedin')
-def linkedin():
-    return render_template('https://www.linkedin.com/company/fliparrow-technologies/')
-@app.route('/twitter')
-def twitter():
-    return render_template('https://twitter.com/FliparrowTech')     
-@app.route('/facebook') 
-def facebook():
-    return render_template('https://www.facebook.com/FliparrowTechnologies')    
-@app.route('/instagram')
-def instagram():
-    return render_template('https://www.instagram.com/fliparrow_technologies/') 
-#End Social Media and Other Routes
 @app.route('/textart')
 def textart():    
     return render_template('textart.html')
@@ -46,34 +30,10 @@ def textart():
 def fliparrowcontactus():    
     return render_template('fliparrow-contactus.html')
 
-#product Route Section
-
-@app.route('/fliparrow-products/')
-def products():
-    return render_template('products.html')
-@app.route('/fortinet-firewall/')
-def productfirewall():    
-    return render_template('fortinet-harware-firewall.html')
-
-@app.route('/endpoint-security/')
-def endpointsecurity():    
-    return render_template('endpoint-security.html')
-
-@app.route('/tally-services/')
-def tallyservices():
-    return render_template('tally-accounting-software.html')
-@app.route('/tally-whatsapp-integration/')
-def tallywhatsappintegration():
-    return render_template('tally-whatsapp-integration.html')
 
 
-@app.route('/add-customer', methods=['POST'])
-def add_customer():
-    from flask import request, redirect, url_for, flash
-    name = request.form.get('name')
-    city = request.form.get('city')
-    phone = request.form.get('phone')
-    # For now, just return a simple confirmation. In a real app you'd save to a database.
-    return render_template('customer-added.html', name=name, city=city, phone=phone)
 if __name__ == '__main__':
     app.run(debug=True , port=8000 , host='0.0.0.0')
+    
+import controller.product_controller as  product_controller
+import controller.social_media as social_media
