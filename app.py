@@ -35,5 +35,6 @@ def fliparrowcontactus():
 if __name__ == '__main__':
     app.run(debug=True , port=8000 , host='0.0.0.0')
     
-import controller.product_controller as  product_controller
-import controller.social_media as social_media
+# import controller.product_controller as product_controller
+# import controller.social_media as social_media
+#from controller import product_controller,social_media
