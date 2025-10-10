@@ -46,6 +46,10 @@
   --surface-color: #ffffff;
 }
 
+.light-background-attn {
+  --background-color: #f5f9ff;
+  --surface-color: #ffffff;
+}
 .dark-background {
   --background-color: #060606;
   --default-color: #ffffff;
@@ -1582,6 +1586,41 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+.hero_tally {
+  width: 100%;
+  min-height: 75vh;
+  position: relative;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  background: url("../img/tally-customization-services.jpg") top left;
+  background-size: cover;
+}
+.hero_attn {
+  width: 100%;
+  min-height: 75vh;
+  position: relative;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  background: url("../img/hero-bg.jpg") top left;
+  background-size: cover;
+}
+.hero_attn .btn-get-started {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-family: var(--heading-font);
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 4px;
+  transition: 0.5s;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+}
+
+
 .hero {
   position: relative;
   padding: 120px 0 60px 0;

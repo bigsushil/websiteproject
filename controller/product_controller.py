@@ -15,4 +15,13 @@ def tallyservices():
     return render_template('tally-accounting-software.html')
 @app.route('/tally-whatsapp-integration/')
 def tallywhatsappintegration():
-    return render_template('tally-whatsapp-integration.html')
+   return render_template  ('tally-whatsapp-integration.html')
+   #return render_template  ('attendance-solutions.html')
+
+@app.route('/attendance-solutions/')
+def attandancesolutions():
+    return render_template  ('attendance-solutions.html')
+
+@app.route('/tally-solutions/')
+def tallysolutions():
+    return render_template  ('tally-customization.html')

@@ -2,7 +2,6 @@ from app import app,render_template
 @app.route('/youtube')
 def youtube():
     return render_template('https://www.youtube.com/@FliparrowTechnologies')
-
 @app.route('/linkedin')
 def linkedin():
     return render_template('https://www.linkedin.com/company/fliparrow-technologies/')
