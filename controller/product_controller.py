@@ -25,3 +25,10 @@ def attandancesolutions():
 @app.route('/tally-solutions/')
 def tallysolutions():
     return render_template  ('tally-customization.html')
+
+@app.route('/cloud-server-solutions/')
+def cloudserversolutions():
+    return render_template  ('cloud-server-solutions.html') 
+@app.route('/data-backup-solutions/')
+def databackupsolutions():
+    return render_template  ('data-backup-solutions.html')
