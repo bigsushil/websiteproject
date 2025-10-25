@@ -4,9 +4,10 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return render_template ('index.html')
-@app.route('/login/')
+
+@app.route('/loginnow/')
 def login():
-    return "Welcome to the login page!"
+    return render_template('login.html')
 
 @app.route('/logout-now/')
 def logout():
@@ -30,7 +31,9 @@ def textart():
 def fliparrowcontactus():    
     return render_template('fliparrow-contactus.html')
 
-
+@app.route('/solar/')
+def fliparrowprivacypolicy():    
+    return render_template('aakartech.fliparrow.com')
 
 if __name__ == '__main__':
     app.run(debug=True , port=8000 , host='0.0.0.0')
